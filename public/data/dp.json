@@ -1,0 +1,26 @@
+{
+  "status": "OK",
+  "message": "",
+  "body": {
+    "text": "%spark\n\nval a = 3;\nval c = 3;",
+    "user": "admin",
+    "jobName": "paragraph_1544349271556_1952393693",
+    "status": "FINISHED",
+    "id": "20181209-185431_1592429542",
+    "dateCreated": "Dec 09, 2018 06:54:31 PM",
+    "dateUpdated": "Dec 09, 2018 06:54:31 PM",
+    "dateStarted": "Dec 09, 2018 06:54:31 PM",
+    "dateFinished": "Dec 09, 2018 06:54:31 PM",
+    "results": {
+                "code": "SUCCESS",
+                "header": [
+                    "USER_ID",
+                    "USER_NAME",
+                    "PHONE_MAKER",
+                    "PHONE_MODEL",
+                    "PHONE_NUM"
+                ],
+                "data": "7\të\u0082¨ì¤\u0080í\u009d¬\tê¸°í\u0083\u0080\tIM-A880S\t010-6524-7568\n6\tì²\u009cë¯¼ê´\u0080\tì\u0082¼ì\u0084±\tSHV-E270\t010-6922-1916\n5\tì \u0084ë³\u0091ëª©\tê¸°í\u0083\u0080\tIM-A880S\t010-9018-1252\n4\tì \u0095ì\u009b\u0090ì\u009a±\tê¸°í\u0083\u0080\tIM-A900\t010-6728-4261\n3\tì²\u009cì\u009b\u0090ì£¼\tì\u0097\u0098ì§\u0080\t220K\t010-2082-2529\n2\tì\u0098¤ì\u009b\u0090ì\u0084 \tì\u0082¼ì\u0084±\tSHV-E250\t010-8944-8274\n1\tì\u009a°ë\u0085¸ì\u0084 \tì\u0082¼ì\u0084±\tSHV-E210\t010-6497-3684\n8\të\u0082¨ì\u009b\u0090ëª\u0085\tê¸°í\u0083\u0080\tIM-A900\t010-5358-7055\n15\tì \u0084ì\u0084\u009dê¸¸\tì\u0095 í\u0094\u008c\tAIP5S\t010-2022-4203\n14\tì\u009e¥ì\u0084\u009dì\u008a¹\tê¸°í\u0083\u0080\tIM-A830\t010-1214-6309\n"
+            }
+  }
+}

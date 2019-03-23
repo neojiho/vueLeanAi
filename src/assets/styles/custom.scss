@@ -1,0 +1,275 @@
+/*variable*/
+$defaultYellow:#f6a821;
+$defaultTextColor:#949ba2;
+$defaultButtonBorderColor:#616779;
+
+/*mixin func*/
+@mixin customScroll {
+	/*custom scroll*/
+	&::-webkit-scrollbar {width:5px;}
+	&::-webkit-scrollbar-thumb {background:#666;border-radius:5px;}
+	&::-webkit-scrollbar-track {background:#ddd;border-radius:5px;}
+}
+@mixin transAll($delay, $duration, $ease) {
+	//transition:all $s s $ease;
+	transition-delay:$delay;
+	transition-duration:$duration;
+	transition-property:all;
+	transition-timing-function:$ease;
+}
+@mixin clear {
+	&:after {content:'';display:block;clear:both;}
+}
+
+/*animation keyframes*/
+@keyframes ActivateBoxShadow {
+	0% {box-shadow:0 0 2px 1px #f6a821;}
+	50% {box-shadow:0 0 8px 2px #f6a821;}
+	100% {box-shadow:0 0 2px 1px #f6a821;}
+}
+@keyframes progress-bar-stripes {
+  from { background-position: -10px 0; }
+  to { background-position: 0 0; }
+}
+
+/*layout*/
+#content {height:calc(100vh - 60px);padding:10px;
+	> div {opacity:1 !important}
+}
+.navbar {
+	.navbarExpandArea {position:relative;
+		.toggleBtn {position:absolute;left:50%;top:-20px;margin-left:-10px;cursor:pointer;}
+		.navbarExpandContent {display:none;}
+	}
+}
+.contentInner {display:flex;height:100%;
+	&.op1 {opacity:1 !important;}
+	/*pacejs overwrite*/
+	> div {width:100%;height:100%;padding:0 5px;}
+	.noteArea {width:50%;
+		.tab-content {height:calc(100% - 40px);
+			.tab-pane, .panel-body {height:100%; margin-bottom:0;}
+		}
+        .noteSelectArea {
+            //.v-select .dropdown-toggle .clear {display:none;}
+        }
+		.noteIconArea {@include clear;padding:10px 0;display:flex;
+			button {
+				flex:1;margin:0 2px;
+			}
+		}
+		.newNoteInputArea {padding:5px 0;;@include clear;
+			&.active {opacity:1;@include transAll(0, 0.5s, ease);}
+			#btnSubmitNewNote {width:100%;}
+		}
+		#noteDescrition {height:300px;resize:none;}
+        #noteUpdateDescription {resize:none}
+	}
+	.paragraphArea {overflow:hidden;display:flex;flex-direction:column;
+        .paragraphListControl {padding:4px;
+            .paragraphListControlBtns {
+                .btn-group {margin:0 2px;
+                    .dropdown-menu {margin-top:0;}
+                    .btn {
+                        &:first-child:not(.btn-single) {border-right-width:0;}
+                        &.btn-single {border-radius:3px;}
+                    }
+                }
+                .btn_allCheck {padding:4px 5px 3px 10px;cursor:pointer;}
+                .btn_checkCaret {padding:5px;border-left-width:0;border-radius:0 3px 3px 0}
+            }
+            .vue-progress-wrap {margin:4px 2px 0;}
+
+        }
+		.paragraphListWrap {overflow-y:auto;height:100%;flex:3;position:relative;@include customScroll;
+            .loader-bar {position:absolute;z-index:100;top:48%;left:48%;}
+			ul.paragraphList {margin-bottom:5px;padding:0;
+				> li {padding:0;
+                    &:empty{height:0;}
+                    &:focus {outline-style:none;box-shadow:none;border-color:transparent; }
+					.paragraphPanel {margin:0 5px 5px;
+						> .panel-heading {padding:5px 15px;
+                            .paragraphInfo {color:$defaultTextColor;line-height:0;
+                                .paragraphSelect {vertical-align:middle}
+                                .paragraphIndex {font-size:12px;}
+                            }
+                        }
+						> .panel-body {padding:0 15px;
+							.panel-body-slotArea {position:relative;height:100%;
+								.btnArea {position:absolute; bottom:5px; right:110px; z-index:10;}
+								.btn_resultArea {position:absolute; bottom:5px; right:20px; z-index:10;}
+							}
+							.paragraphText {@include customScroll;
+								//.CodeMirror {height:70px;}
+								.CodeMirror {max-height:70px; @include transAll(0s, 0s, ease)}
+							}
+                            .loader-spin {position:absolute;left:48%;top:40%;z-index:10;}
+						}
+						> .panel-footer {padding:0 15px 10px;
+							.footerExpandArea {clear:both;
+								.paragraphResultArea {display:none;
+									&.expanded {
+										display:block;
+									}
+								}
+								.toggleBtnArea {text-align:center;height:10px;
+									> .toggleBtn {display:inline-block;width:60px;height:10px;position:relative;border-radius:5px;background-color:#494b54;box-shadow:0 0 5px 0 #333;color:#f6a821;vertical-align:top;cursor:pointer;
+										&:hover {background-color:#717484;}
+										> i.fa {position:absolute;top:0;left:48%;font-size:10px;}
+									}
+								}
+							}
+							.paragraphFooterResultArea {position:relative;
+								.noPanelResultArea {
+									margin-top:10px; padding:10px; color:#fff; border:1px solid $defaultButtonBorderColor; border-radius:3px;
+									.resultSelectArea {
+										button {margin-right:2px;}
+									}
+									.resultTextArea {margin-top:10px;
+                                        &:empty {margin:0;}
+                                        pre {color:#fff; white-space:pre;}
+                                    }
+								}
+
+                            }
+						}
+						&.paragraphActive {border:1px solid #f6a821;border-left-width:3px;
+
+							//animation :ActivateBoxShadow 3s 1s linear infinite;
+							> .panel-body {
+								.paragraphText {
+									//.CodeMirror {height:auto; min-height:70px;
+									//	.CodeMirror-scroll {min-height:70px;}
+									//}
+									.CodeMirror {max-height:10000px; height:auto; min-height:70px; @include transAll(0s, 0.4s, ease);
+										.CodeMirror-scroll {min-height:70px;}
+									}
+								}
+							}
+						}
+
+						//&:not(.paragraphActive) {opacity:0.3;}
+						&.expanded {
+							> .panel-body {
+								.paragraphText {height:100%;
+									.CodeMirror {height:100%;}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.paragraphInput {overflow-y:auto;flex:1;height:100%;
+			> .paragraphInputPanel {margin-bottom:0;height:100%;background-color:#ddd;
+				> .panel-heading {padding:5px 15px;color:#2F323B;font-weight:bold;}
+				> .panel-body {height:calc(100% - 42px);padding:0 15px; margin-bottom:0;
+					.panel-body-slotArea {position:relative;height:100%;
+						.btnArea {position:absolute; bottom:5px; right:20px;z-index:10;
+                            :hover {font-weight:bold; color:#333;}
+                        }
+					}
+					.paragraphText {height:100%;/*min-height:250px;*/@include customScroll;
+						.CodeMirror {height:100%;}
+					}
+                    .loader-dots {position:absolute;left:35%;top:48%;z-index:10;}
+				}
+				> .panel-footer {padding:5px 15px;@include clear;
+					.btnArea {}
+				}
+				&.paragraphActive {border:1px solid #fff;border-left-width:3px;}
+				//&:not(.paragraphActive) {opacity:0.5;}
+				&.expanded {
+					> .panel-body {
+						.paragraphText {height:100%;
+							.CodeMirror {height:100%;}
+						}
+					}
+				}
+			}
+            &.readOnly {
+                .btnArea {display:none;}
+                cursor:not-allowed; opacity:0.6; .CodeMirror-cursors {display:none;}
+            }
+		}
+
+		.tab-content {height:calc(100% - 45px);
+			.tab-pane {height:100%;
+				> .panel-body {height:100%;}
+			}
+
+		}
+	}
+
+	.resultArea {
+		.layoutNorthSouth {display:flex;height:100%;flex-direction:column;
+			> .resultPanelWrap {overflow-y:auto;flex:1;@include customScroll;}
+		}
+	}
+
+	.resultPanel {margin-bottom:0;
+		> .panel-heading {padding:5px 15px;
+			.btn {padding:3px 6px}
+		}
+		> .panel-body {padding:5px 15px;}
+		> .panel-footer {padding:5px 15px;}
+	}
+}
+/*panel expanded */
+.panel {
+	&.expanded {@include transAll(0s, 0.3s, ease);@include customScroll;overflow:auto;position:fixed;left:0;top:0;z-index:10000;width:100vw;height:100vh;background-color:#393c45;
+		.panel-body {height:88vh;
+			> textarea {height:100%;}
+		}
+	}
+}
+/*toggle*/
+.toggleWrap {@include transAll(0s, 0.3s, ease);position:relative;
+	&.toggleCollapse {@include transAll(0s, 0.3s, ease); overflow:hidden !important;width:10px !important; min-width:10px;margin:0;padding:0;
+		> *:not(.toggleBtnArea) {display:none;}
+	}
+	.toggleBtnArea {position:absolute;right:0;top:50%;margin-top:-30px;
+		> .toggleBtn {display:block;height:60px;border-radius:5px;background-color:#494b54;box-shadow:0 0 5px 0px #333;color:#f6a821;cursor:pointer;
+			&:hover {background-color:#717484;}
+			> i.fa {vertical-align:-20px;padding:2px;}
+		}
+	}
+}
+.blind {overflow:hidden; visibility:hidden; position:absolute; left:0; top:-1000em;}
+
+/*data table*/
+.dataTableWrap {overflow-x:auto;
+    .filterWrap {margin:10px 0;}
+    .pagerWrap {text-align:center;
+        .pagination {margin:0 !important;}
+    }
+}
+
+/*vue-simple-progress*/
+.vue-simple-progress {}
+.vue-simple-progress-bar {
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, .35) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .35) 50%, rgba(0, 0, 0, .35) 75%, transparent 75%, transparent) !important;
+	background-size: 1rem 1rem !important;
+
+}
+.vue-progress-wrap {
+	&.active {
+		.vue-simple-progress-bar {animation:progress-bar-stripes 1s linear infinite}
+	}
+}
+.vue-simple-progress-text {position:absolute;z-index:1;left:50%;top:-15px;margin-left:-25px;padding:0;}
+
+//drop-down
+@keyframes nodeInserted {
+    from { height:0;}
+    to { height:2rem;}
+}
+
+.item-dropzone-area {
+    height: 2rem;
+    border:1px dashed #888;
+    opacity: 0.8;
+    animation-duration: 0.1s;
+    animation-name: nodeInserted;
+}

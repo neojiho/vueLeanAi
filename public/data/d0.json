@@ -1,0 +1,40 @@
+{
+  "status" : "OK",
+  "message" : "status 가 ERROR 인 경우, 메시지 발생",
+  "body" : {
+    "result" : [
+      {
+        "PROCESS_ID": "LEAN-APP-1516855297152",
+        "APPLICATION_ID": "application_1516709057485_0001"
+      },
+      {
+        "PROCESS_ID": "LEAN-APP-1516854697152",
+        "APPLICATION_ID": "application_1516709057485_0002"
+      },
+      {
+        "PROCESS_ID": "LEAN-APP-1516836297152",
+        "APPLICATION_ID": "application_1516709057485_0003"
+      },
+      {
+        "PROCESS_ID": "LEAN-APP-1516475297152",
+        "APPLICATION_ID": "application_1516709057485_0004"
+      },
+      {
+        "PROCESS_ID": "LEAN-APP-1516855245153",
+        "APPLICATION_ID": "application_1516709057485_0005"
+      },
+      {
+        "PROCESS_ID": "LEAN-APP-1516855222154",
+        "APPLICATION_ID": "application_1516709057485_0006"
+      },
+      {
+        "PROCESS_ID": "LEAN-APP-1516855297855",
+        "APPLICATION_ID": "application_1516709057485_0007"
+      },
+      {
+        "PROCESS_ID": "LEAN-APP-1516855297256",
+        "APPLICATION_ID": "application_1516709057485_0008"
+      }
+    ]
+  }
+}

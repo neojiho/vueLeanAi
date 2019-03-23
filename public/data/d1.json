@@ -1,0 +1,76 @@
+{
+    "id": "2DTU73EQQ",
+    "name": "SPARK_TEST",
+    "paragraphs": [
+        {
+            "text": "%spark\n\nval a=1;\nval b=2;",
+            "user": "admin",
+            "jobName": "paragraph_1540961818180_-608563513",
+            "status": "ABORT",
+            "id": "20181031-135658_559262566",
+            "dateCreated": "Oct 31, 2018 01:56:58 PM",
+            "dateUpdated": "Nov 05, 2018 09:51:00 PM",
+            "dateStarted": "Nov 06, 2018 02:47:55 PM",
+            "dateFinished": "Nov 06, 2018 02:47:55 PM",
+            "results": {
+                "code": "SUCCESS",
+                "header": null,
+                "data": "a: Int = 1\nb: Int = 2\n"
+            }
+        },
+        {
+            "text": "%spark.sql\n\nshow tables",
+            "user": "admin",
+            "jobName": "paragraph_1540959537575_755689812",
+            "status": "ABORT",
+            "id": "20181031-131857_939847951",
+            "dateCreated": "Oct 31, 2018 01:18:57 PM",
+            "dateUpdated": "Nov 05, 2018 10:32:12 PM",
+            "dateStarted": "Nov 06, 2018 02:47:59 PM",
+            "dateFinished": "Nov 06, 2018 02:47:59 PM",
+            "results": {
+                "code": "SUCCESS",
+                "header": [
+                    "database",
+                    "tableName",
+                    "isTemporary"
+                ],
+                "data": "default\tmariadb_tbl_code\tfalse\ndefault\tmariadb_tbl_connection\tfalse\ndefault\tphoenix_tbl_dsb_user\tfalse\n"
+            }
+        },
+        {
+            "text": "%spark.sql\n\nselect * from phoenix_tbl_dsb_user limit 10\n",
+            "user": "admin",
+            "jobName": "paragraph_1540959549443_-489535663",
+            "status": "ABORT",
+            "id": "20181031-131909_1690994146",
+            "dateCreated": "Oct 31, 2018 01:19:09 PM",
+            "dateUpdated": "Nov 05, 2018 09:52:34 PM",
+            "dateStarted": "Nov 06, 2018 05:38:50 PM",
+            "dateFinished": "Nov 06, 2018 05:38:50 PM",
+            "results": {
+                "code": "SUCCESS",
+                "header": [
+                    "USER_ID",
+                    "USER_NAME",
+                    "PHONE_MAKER",
+                    "PHONE_MODEL",
+                    "PHONE_NUM"
+                ],
+                "data": "7\të\u0082¨ì¤\u0080í\u009d¬\tê¸°í\u0083\u0080\tIM-A880S\t010-6524-7568\n6\tì²\u009cë¯¼ê´\u0080\tì\u0082¼ì\u0084±\tSHV-E270\t010-6922-1916\n5\tì \u0084ë³\u0091ëª©\tê¸°í\u0083\u0080\tIM-A880S\t010-9018-1252\n4\tì \u0095ì\u009b\u0090ì\u009a±\tê¸°í\u0083\u0080\tIM-A900\t010-6728-4261\n3\tì²\u009cì\u009b\u0090ì£¼\tì\u0097\u0098ì§\u0080\t220K\t010-2082-2529\n2\tì\u0098¤ì\u009b\u0090ì\u0084 \tì\u0082¼ì\u0084±\tSHV-E250\t010-8944-8274\n1\tì\u009a°ë\u0085¸ì\u0084 \tì\u0082¼ì\u0084±\tSHV-E210\t010-6497-3684\n8\të\u0082¨ì\u009b\u0090ëª\u0085\tê¸°í\u0083\u0080\tIM-A900\t010-5358-7055\n15\tì \u0084ì\u0084\u009dê¸¸\tì\u0095 í\u0094\u008c\tAIP5S\t010-2022-4203\n14\tì\u009e¥ì\u0084\u009dì\u008a¹\tê¸°í\u0083\u0080\tIM-A830\t010-1214-6309\n"
+            }
+        },
+        {
+            "text": "%spark.sql\n",
+            "user": "admin",
+            "jobName": "paragraph_1540959971399_1925187653",
+            "status": "FINISHED",
+            "id": "20181031-132611_1767206614",
+            "dateCreated": "Oct 31, 2018 01:26:11 PM",
+            "dateUpdated": "Oct 31, 2018 01:26:11 PM",
+            "dateStarted": null,
+            "dateFinished": null,
+            "results": null
+        }
+    ]
+}

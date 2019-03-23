@@ -1,0 +1,155 @@
+/*variable*/
+/*mixin func*/
+/*animation keyframes*/
+@keyframes ActivateBoxShadow { 0% { box-shadow: 0 0 2px 1px #f6a821; }
+  50% { box-shadow: 0 0 8px 2px #f6a821; }
+  100% { box-shadow: 0 0 2px 1px #f6a821; } }
+@keyframes progress-bar-stripes { from { background-position: -10px 0; }
+  to { background-position: 0 0; } }
+/*layout*/
+#content { height: calc(100vh - 60px); padding: 10px; }
+#content > div { opacity: 1 !important; }
+
+.navbar .navbarExpandArea { position: relative; }
+.navbar .navbarExpandArea .toggleBtn { position: absolute; left: 50%; top: -20px; margin-left: -10px; cursor: pointer; }
+.navbar .navbarExpandArea .navbarExpandContent { display: none; }
+
+.contentInner { display: flex; height: 100%; /*pacejs overwrite*/ }
+.contentInner.op1 { opacity: 1 !important; }
+.contentInner > div { width: 100%; height: 100%; padding: 0 5px; }
+.contentInner .noteArea { width: 50%; }
+.contentInner .noteArea .tab-content { height: calc(100% - 40px); }
+.contentInner .noteArea .tab-content .tab-pane, .contentInner .noteArea .tab-content .panel-body { height: 100%; margin-bottom: 0; }
+.contentInner .noteArea .noteIconArea { padding: 10px 0; display: flex; }
+.contentInner .noteArea .noteIconArea:after { content: ''; display: block; clear: both; }
+.contentInner .noteArea .noteIconArea button { flex: 1; margin: 0 2px; }
+.contentInner .noteArea .newNoteInputArea { padding: 5px 0; }
+.contentInner .noteArea .newNoteInputArea:after { content: ''; display: block; clear: both; }
+.contentInner .noteArea .newNoteInputArea.active { opacity: 1; transition-delay: 0; transition-duration: 0.5s; transition-property: all; transition-timing-function: ease; }
+.contentInner .noteArea .newNoteInputArea #btnSubmitNewNote { width: 100%; }
+.contentInner .noteArea #noteDescrition { height: 300px; resize: none; }
+.contentInner .noteArea #noteUpdateDescription { resize: none; }
+.contentInner .paragraphArea { overflow: hidden; display: flex; flex-direction: column; }
+.contentInner .paragraphArea .paragraphListControl { padding: 4px; }
+.contentInner .paragraphArea .paragraphListControl .paragraphListControlBtns .btn-group { margin: 0 2px; }
+.contentInner .paragraphArea .paragraphListControl .paragraphListControlBtns .btn-group .dropdown-menu { margin-top: 0; }
+.contentInner .paragraphArea .paragraphListControl .paragraphListControlBtns .btn-group .btn:first-child:not(.btn-single) { border-right-width: 0; }
+.contentInner .paragraphArea .paragraphListControl .paragraphListControlBtns .btn-group .btn.btn-single { border-radius: 3px; }
+.contentInner .paragraphArea .paragraphListControl .paragraphListControlBtns .btn_allCheck { padding: 4px 5px 3px 10px; cursor: pointer; }
+.contentInner .paragraphArea .paragraphListControl .paragraphListControlBtns .btn_checkCaret { padding: 5px; border-left-width: 0; border-radius: 0 3px 3px 0; }
+.contentInner .paragraphArea .paragraphListControl .vue-progress-wrap { margin: 4px 2px 0; }
+.contentInner .paragraphArea .paragraphListWrap { overflow-y: auto; height: 100%; flex: 3; position: relative; /*custom scroll*/ }
+.contentInner .paragraphArea .paragraphListWrap::-webkit-scrollbar { width: 5px; }
+.contentInner .paragraphArea .paragraphListWrap::-webkit-scrollbar-thumb { background: #666; border-radius: 5px; }
+.contentInner .paragraphArea .paragraphListWrap::-webkit-scrollbar-track { background: #ddd; border-radius: 5px; }
+.contentInner .paragraphArea .paragraphListWrap .loader-bar { position: absolute; z-index: 100; top: 48%; left: 48%; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList { margin-bottom: 5px; padding: 0; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li { padding: 0; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li:empty { height: 0; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li:focus { outline-style: none; box-shadow: none; border-color: transparent; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel { margin: 0 5px 5px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-heading { padding: 5px 15px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-heading .paragraphInfo { color: #949ba2; line-height: 0; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-heading .paragraphInfo .paragraphSelect { vertical-align: middle; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-heading .paragraphInfo .paragraphIndex { font-size: 12px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body { padding: 0 15px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .panel-body-slotArea { position: relative; height: 100%; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .panel-body-slotArea .btnArea { position: absolute; bottom: 5px; right: 110px; z-index: 10; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .panel-body-slotArea .btn_resultArea { position: absolute; bottom: 5px; right: 20px; z-index: 10; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .paragraphText { /*custom scroll*/ }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .paragraphText::-webkit-scrollbar { width: 5px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .paragraphText::-webkit-scrollbar-thumb { background: #666; border-radius: 5px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .paragraphText::-webkit-scrollbar-track { background: #ddd; border-radius: 5px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .paragraphText .CodeMirror { max-height: 70px; transition-delay: 0s; transition-duration: 0s; transition-property: all; transition-timing-function: ease; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-body .loader-spin { position: absolute; left: 48%; top: 40%; z-index: 10; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer { padding: 0 15px 10px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .footerExpandArea { clear: both; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .footerExpandArea .paragraphResultArea { display: none; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .footerExpandArea .paragraphResultArea.expanded { display: block; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .footerExpandArea .toggleBtnArea { text-align: center; height: 10px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .footerExpandArea .toggleBtnArea > .toggleBtn { display: inline-block; width: 60px; height: 10px; position: relative; border-radius: 5px; background-color: #494b54; box-shadow: 0 0 5px 0 #333; color: #f6a821; vertical-align: top; cursor: pointer; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .footerExpandArea .toggleBtnArea > .toggleBtn:hover { background-color: #717484; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .footerExpandArea .toggleBtnArea > .toggleBtn > i.fa { position: absolute; top: 0; left: 48%; font-size: 10px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .paragraphFooterResultArea { position: relative; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .paragraphFooterResultArea .noPanelResultArea { margin-top: 10px; padding: 10px; color: #fff; border: 1px solid #616779; border-radius: 3px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .paragraphFooterResultArea .noPanelResultArea .resultSelectArea button { margin-right: 2px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .paragraphFooterResultArea .noPanelResultArea .resultTextArea { margin-top: 10px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .paragraphFooterResultArea .noPanelResultArea .resultTextArea:empty { margin: 0; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel > .panel-footer .paragraphFooterResultArea .noPanelResultArea .resultTextArea pre { color: #fff; white-space: pre; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel.paragraphActive { border: 1px solid #f6a821; border-left-width: 3px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel.paragraphActive > .panel-body .paragraphText .CodeMirror { max-height: 10000px; height: auto; min-height: 70px; transition-delay: 0s; transition-duration: 0.4s; transition-property: all; transition-timing-function: ease; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel.paragraphActive > .panel-body .paragraphText .CodeMirror .CodeMirror-scroll { min-height: 70px; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel.expanded > .panel-body .paragraphText { height: 100%; }
+.contentInner .paragraphArea .paragraphListWrap ul.paragraphList > li .paragraphPanel.expanded > .panel-body .paragraphText .CodeMirror { height: 100%; }
+.contentInner .paragraphArea .paragraphInput { overflow-y: auto; flex: 1; height: 100%; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel { margin-bottom: 0; height: 100%; background-color: #ddd; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-heading { padding: 5px 15px; color: #2F323B; font-weight: bold; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body { height: calc(100% - 42px); padding: 0 15px; margin-bottom: 0; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .panel-body-slotArea { position: relative; height: 100%; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .panel-body-slotArea .btnArea { position: absolute; bottom: 5px; right: 20px; z-index: 10; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .panel-body-slotArea .btnArea :hover { font-weight: bold; color: #333; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .paragraphText { height: 100%; /*min-height:250px;*/ /*custom scroll*/ }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .paragraphText::-webkit-scrollbar { width: 5px; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .paragraphText::-webkit-scrollbar-thumb { background: #666; border-radius: 5px; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .paragraphText::-webkit-scrollbar-track { background: #ddd; border-radius: 5px; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .paragraphText .CodeMirror { height: 100%; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-body .loader-dots { position: absolute; left: 35%; top: 48%; z-index: 10; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-footer { padding: 5px 15px; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel > .panel-footer:after { content: ''; display: block; clear: both; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel.paragraphActive { border: 1px solid #fff; border-left-width: 3px; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel.expanded > .panel-body .paragraphText { height: 100%; }
+.contentInner .paragraphArea .paragraphInput > .paragraphInputPanel.expanded > .panel-body .paragraphText .CodeMirror { height: 100%; }
+.contentInner .paragraphArea .paragraphInput.readOnly { cursor: not-allowed; opacity: 0.6; }
+.contentInner .paragraphArea .paragraphInput.readOnly .btnArea { display: none; }
+.contentInner .paragraphArea .paragraphInput.readOnly .CodeMirror-cursors { display: none; }
+.contentInner .paragraphArea .tab-content { height: calc(100% - 45px); }
+.contentInner .paragraphArea .tab-content .tab-pane { height: 100%; }
+.contentInner .paragraphArea .tab-content .tab-pane > .panel-body { height: 100%; }
+.contentInner .resultArea .layoutNorthSouth { display: flex; height: 100%; flex-direction: column; }
+.contentInner .resultArea .layoutNorthSouth > .resultPanelWrap { overflow-y: auto; flex: 1; /*custom scroll*/ }
+.contentInner .resultArea .layoutNorthSouth > .resultPanelWrap::-webkit-scrollbar { width: 5px; }
+.contentInner .resultArea .layoutNorthSouth > .resultPanelWrap::-webkit-scrollbar-thumb { background: #666; border-radius: 5px; }
+.contentInner .resultArea .layoutNorthSouth > .resultPanelWrap::-webkit-scrollbar-track { background: #ddd; border-radius: 5px; }
+.contentInner .resultPanel { margin-bottom: 0; }
+.contentInner .resultPanel > .panel-heading { padding: 5px 15px; }
+.contentInner .resultPanel > .panel-heading .btn { padding: 3px 6px; }
+.contentInner .resultPanel > .panel-body { padding: 5px 15px; }
+.contentInner .resultPanel > .panel-footer { padding: 5px 15px; }
+
+/*panel expanded */
+.panel.expanded { transition-delay: 0s; transition-duration: 0.3s; transition-property: all; transition-timing-function: ease; /*custom scroll*/ overflow: auto; position: fixed; left: 0; top: 0; z-index: 10000; width: 100vw; height: 100vh; background-color: #393c45; }
+.panel.expanded::-webkit-scrollbar { width: 5px; }
+.panel.expanded::-webkit-scrollbar-thumb { background: #666; border-radius: 5px; }
+.panel.expanded::-webkit-scrollbar-track { background: #ddd; border-radius: 5px; }
+.panel.expanded .panel-body { height: 88vh; }
+.panel.expanded .panel-body > textarea { height: 100%; }
+
+/*toggle*/
+.toggleWrap { transition-delay: 0s; transition-duration: 0.3s; transition-property: all; transition-timing-function: ease; position: relative; }
+.toggleWrap.toggleCollapse { transition-delay: 0s; transition-duration: 0.3s; transition-property: all; transition-timing-function: ease; overflow: hidden !important; width: 10px !important; min-width: 10px; margin: 0; padding: 0; }
+.toggleWrap.toggleCollapse > *:not(.toggleBtnArea) { display: none; }
+.toggleWrap .toggleBtnArea { position: absolute; right: 0; top: 50%; margin-top: -30px; }
+.toggleWrap .toggleBtnArea > .toggleBtn { display: block; height: 60px; border-radius: 5px; background-color: #494b54; box-shadow: 0 0 5px 0px #333; color: #f6a821; cursor: pointer; }
+.toggleWrap .toggleBtnArea > .toggleBtn:hover { background-color: #717484; }
+.toggleWrap .toggleBtnArea > .toggleBtn > i.fa { vertical-align: -20px; padding: 2px; }
+
+.blind { overflow: hidden; visibility: hidden; position: absolute; left: 0; top: -1000em; }
+
+/*data table*/
+.dataTableWrap { overflow-x: auto; }
+.dataTableWrap .filterWrap { margin: 10px 0; }
+.dataTableWrap .pagerWrap { text-align: center; }
+.dataTableWrap .pagerWrap .pagination { margin: 0 !important; }
+
+/*vue-simple-progress*/
+.vue-simple-progress-bar { background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.35) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.35) 75%, transparent 75%, transparent) !important; background-size: 1rem 1rem !important; }
+
+.vue-progress-wrap.active .vue-simple-progress-bar { animation: progress-bar-stripes 1s linear infinite; }
+
+.vue-simple-progress-text { position: absolute; z-index: 1; left: 50%; top: -15px; margin-left: -25px; padding: 0; }
+
+@keyframes nodeInserted { from { height: 0; }
+  to { height: 2rem; } }
+.item-dropzone-area { height: 2rem; border: 1px dashed #888; opacity: 0.8; animation-duration: 0.1s; animation-name: nodeInserted; }
+
+/*# sourceMappingURL=custom.css.map */
